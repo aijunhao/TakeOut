@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.adapter;
+package com.aijunhao.takeout.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 
 import com.aijunhao.takeout.R;
-import com.aijunhao.takeout.activity.BusinessActivity;
-import com.aijunhao.takeout.domine.Seller;
+import com.aijunhao.takeout.ui.activity.BusinessActivity;
+import com.aijunhao.takeout.model.net.bean.Seller;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
@@ -43,15 +43,23 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     private HashMap<Integer, Integer> positionToIndex = new HashMap<>();
 
-    private List<String> nearBySellers = new ArrayList<>();
-    private List<String> otherSellers = new ArrayList<>();
+    private List<Seller> nearBySellers = new ArrayList<>();
+    private List<Seller> otherSellers = new ArrayList<>();
 
     public HomeRecyclerViewAdapter(Context context) {
         mContext = context;
     }
 
-    public HomeRecyclerViewAdapter(List<String> nearBySellers, List<String> otherSellers) {
+    public HomeRecyclerViewAdapter(List<Seller> nearBySellers, List<Seller> otherSellers) {
         this.nearBySellers = nearBySellers;
+        this.otherSellers = otherSellers;
+    }
+
+    public void setNearBySellers(List<Seller> nearbySellers) {
+        this.nearBySellers = nearbySellers;
+    }
+
+    public void setOtherSellers(List<Seller> otherSellers) {
         this.otherSellers = otherSellers;
     }
 
@@ -74,11 +82,9 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                 DivisionHolder divisionHolder = new DivisionHolder(divisionView);
                 return divisionHolder;
             case TYPE_SELLER:
-                View sellerView = View.inflate(parent.getContext(), R.layout.item_home_common, null);
-                CommonHolder commonHolder = new CommonHolder(sellerView);
-                return commonHolder;
-//                SellerHolder sellerHolder = new SellerHolder(sellerView);
-//                return sellerHolder;
+                View sellerView = View.inflate(parent.getContext(), R.layout.item_home_seller, null);
+                SellerHolder sellerHolder = new SellerHolder(sellerView);
+                return sellerHolder;
         }
         return null;
     }
@@ -91,7 +97,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
      */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Log.d(this.getClass().getName(), "onBindViewHolder(): holder.getItemViewType()" + holder.getItemViewType() + "position = " + position);
+//        Log.d(this.getClass().getName(), "onBindViewHolder(): holder.getItemViewType()" + holder.getItemViewType() + "position = " + position);
         switch (holder.getItemViewType()) {
             case TYPE_TITLE:
                 break;
@@ -105,8 +111,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                 if (position - 1 < nearBySellers.size()) {
                     // nearBySellers数据 index：0 - size()+1
                     int index = position - 1;
-                    ((CommonHolder)holder).tv.setText(nearBySellers.get(index));
-//                    ((SellerHolder) holder).setData(nearBySellers.get(index));
+                    ((SellerHolder) holder).setData(nearBySellers.get(index));
                 } else {
                     // 从其他商家集合获取数据
 
@@ -117,14 +122,12 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                     if (positionToIndex.containsKey(position)) {
                         index = positionToIndex.get(position);
                     } else {
-                        index = position - nearBySellers.size() - 1 - divisionSum;
+                        index = position - nearBySellers.size()  - divisionSum;
 
                         positionToIndex.put(position, index);
                     }
-                    ((CommonHolder)holder).tv.setText(otherSellers.get(index));
-//                    ((SellerHolder) holder).setData(otherSellers.get(index));
+                    ((SellerHolder) holder).setData(otherSellers.get(index));
                 }
-
                 break;
         }
     }
@@ -137,7 +140,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
      */
     @Override
     public int getItemViewType(int position) {
-        Log.d(this.getClass().getName(), "getItemViewType(): position = " + position);
+//        Log.d(this.getClass().getName(), "getItemViewType(): position = " + position);
         int type = -1;
         if (position == 0) {
             type = TYPE_TITLE;
@@ -148,7 +151,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         } else {
             type = TYPE_SELLER;
         }
-        Log.d(this.getClass().getName(), "getItemViewType(): type = " + type);
+//        Log.d(this.getClass().getName(), "getItemViewType(): type = " + type);
         return type;
     }
 

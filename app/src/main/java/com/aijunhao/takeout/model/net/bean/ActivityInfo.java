@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.domine;
+package com.aijunhao.takeout.model.net.bean;
 
 /**
  * @Author Aijunhao

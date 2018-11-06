@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.activity;
+package com.aijunhao.takeout.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -7,7 +7,7 @@ package com.aijunhao.takeout.utils;
  */
 public interface Constant {
 
-    String BASEURL = "http://47.96.118.115:8080/";
+    String HOST = "http://47.96.118.115:8080/";
     String LOGIN   = "TakeoutService/login";
     String HOME_URL = "TakeoutService/home";
 

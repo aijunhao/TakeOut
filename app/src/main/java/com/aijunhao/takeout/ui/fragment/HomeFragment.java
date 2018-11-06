@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.fragment;
+package com.aijunhao.takeout.ui.fragment;
 
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
@@ -14,10 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aijunhao.takeout.R;
-import com.aijunhao.takeout.adapter.HomeRecyclerViewAdapter;
+import com.aijunhao.takeout.dagger.component.fragment.DaggerHomeFragmentComponent;
+import com.aijunhao.takeout.dagger.module.fragment.HomeFragmentModule;
+import com.aijunhao.takeout.model.net.bean.Seller;
+import com.aijunhao.takeout.presenter.fragment.HomeFragmentPresenter;
+import com.aijunhao.takeout.ui.adapter.HomeRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,6 +73,15 @@ public class HomeFragment extends BaseFragment {
 
     private HomeRecyclerViewAdapter adapter;
 
+    @Inject
+    HomeFragmentPresenter presenter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        DaggerHomeFragmentComponent.builder().homeFragmentModule(new HomeFragmentModule(this)).build().in(this);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -79,29 +94,34 @@ public class HomeFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getTestData();
+//        getTestData();
         adapter = new HomeRecyclerViewAdapter(this.getContext());
+        rvHome.setAdapter(adapter);
         rvHome.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false));
-
         rvHome.addOnScrollListener(listener);
-        //        rvHome.setAdapter(adapter);
 
+        // 获取服务端的数据
+        presenter.getData();
     }
 
     /**
      * recyclerview的列表测试数据
      */
-    private void getTestData() {
-        List<String> nearBySellers = new ArrayList<>();
-        List<String> otherSellers = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            nearBySellers.add("附近商家" + i);
-        }
-        for (int i = 9; i < 100; i++) {
-            otherSellers.add("普通商家" + i);
-        }
-        rvHome.setAdapter(new HomeRecyclerViewAdapter(nearBySellers, otherSellers));
-    }
+//    private void getTestData() {
+//        List<Seller> nearBySellers = new ArrayList<>();
+//        List<Seller> otherSellers = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            Seller seller = new Seller();
+//            seller.setName("附近商家" + i);
+//            nearBySellers.add(seller);
+//        }
+//        for (int i = 9; i < 100; i++) {
+//            Seller seller = new Seller();
+//            seller.setName("普通商家" + i);
+//            otherSellers.add(seller);
+//        }
+//        rvHome.setAdapter(new HomeRecyclerViewAdapter(nearBySellers, otherSellers));
+//    }
 
 
     private RecyclerView.OnScrollListener listener = new RecyclerView.OnScrollListener() {
@@ -109,7 +129,7 @@ public class HomeFragment extends BaseFragment {
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
             // 滑动增量
-            Log.e(TAG, "RecyclerView = [" + recyclerView + "], dx = [" + dx + "], dy = [" + dy + "]");
+//            Log.e(TAG, "RecyclerView = [" + recyclerView + "], dx = [" + dx + "], dy = [" + dy + "]");
             sumY += dy;
 
             alpha = 1 - sumY / duration;
@@ -147,5 +167,9 @@ public class HomeFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    public HomeRecyclerViewAdapter getAdapter() {
+        return adapter;
     }
 }

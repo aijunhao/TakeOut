@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.activity;
+package com.aijunhao.takeout.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,10 +8,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.aijunhao.takeout.R;
-import com.aijunhao.takeout.fragment.HomeFragment;
-import com.aijunhao.takeout.fragment.MineFragment;
-import com.aijunhao.takeout.fragment.MoreFragment;
-import com.aijunhao.takeout.fragment.OrderFragment;
+import com.aijunhao.takeout.ui.fragment.HomeFragment;
+import com.aijunhao.takeout.ui.fragment.MineFragment;
+import com.aijunhao.takeout.ui.fragment.MoreFragment;
+import com.aijunhao.takeout.ui.fragment.OrderFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 

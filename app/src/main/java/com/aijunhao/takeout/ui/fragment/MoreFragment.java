@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.fragment;
+package com.aijunhao.takeout.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

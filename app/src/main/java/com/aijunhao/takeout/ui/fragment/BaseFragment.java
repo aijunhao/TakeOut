@@ -1,4 +1,4 @@
-package com.aijunhao.takeout.fragment;
+package com.aijunhao.takeout.ui.fragment;
 
 import android.support.v4.app.Fragment;
 
