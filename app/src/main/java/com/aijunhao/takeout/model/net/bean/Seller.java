@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * @Author Aijunhao
  * @Time 2018/11/5 20:57
- * @Description
+ * @Description 商家类
  */
 public class Seller implements Serializable {
 

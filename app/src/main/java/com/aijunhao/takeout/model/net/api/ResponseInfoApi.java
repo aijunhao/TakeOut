@@ -5,6 +5,7 @@ import com.aijunhao.takeout.utils.Constant;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * @Author Aijunhao
@@ -15,4 +16,7 @@ public interface ResponseInfoApi {
 
     @GET(Constant.HOME_URL)
     Call<ResponseInfo> getHomeInfo();
+
+    @GET(Constant.GOODS_URL)
+    Call<ResponseInfo> getGoodsInfo(@Query("sellerId")int sellerId);
 }

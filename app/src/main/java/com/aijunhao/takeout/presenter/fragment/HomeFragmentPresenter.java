@@ -16,6 +16,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 
 /**
@@ -29,6 +31,7 @@ public class HomeFragmentPresenter extends BasePresenter{
 
     private String TAG = HomeFragmentPresenter.class.getName();
 
+    @Inject
     public HomeFragmentPresenter(HomeFragment homeFragment) {
         this.homeFragment = homeFragment;
     }
@@ -36,7 +39,7 @@ public class HomeFragmentPresenter extends BasePresenter{
     @Override
     public void getData() {
         Call<ResponseInfo> homeInfo = responseInfoApi.getHomeInfo();
-        homeInfo.enqueue(new CallbackAdapter());
+        homeInfo.enqueue(callback);
     }
 
     @Override

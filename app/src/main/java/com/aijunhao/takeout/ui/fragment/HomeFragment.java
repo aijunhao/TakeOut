@@ -20,8 +20,7 @@ import com.aijunhao.takeout.model.net.bean.Seller;
 import com.aijunhao.takeout.presenter.fragment.HomeFragmentPresenter;
 import com.aijunhao.takeout.ui.adapter.HomeRecyclerViewAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.inject.Inject;
 

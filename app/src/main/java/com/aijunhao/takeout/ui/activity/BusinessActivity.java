@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.aijunhao.takeout.R;
 import com.aijunhao.takeout.model.net.bean.Seller;
-import com.aijunhao.takeout.ui.adapter.BusinessActivityAdapter;
+import com.aijunhao.takeout.ui.adapter.BusinessActivityVPAdapter;
 import com.aijunhao.takeout.ui.fragment.BusinessFragment;
 import com.aijunhao.takeout.ui.fragment.CommentFragment;
 import com.aijunhao.takeout.ui.fragment.GoodsFragment;
@@ -83,7 +83,7 @@ public class BusinessActivity extends AppCompatActivity {
         //创建Fragment
         createFragmentList();
 
-        BusinessActivityAdapter vpAdapter = new BusinessActivityAdapter(getSupportFragmentManager(), listFragment);
+        BusinessActivityVPAdapter vpAdapter = new BusinessActivityVPAdapter(getSupportFragmentManager(), listFragment);
         vp.setAdapter(vpAdapter);
         //关联ViewPger和TabLayout   注意：一定要重写Adapter里面的一个方法getPageTitle(int position)
         tabs.setupWithViewPager(vp);

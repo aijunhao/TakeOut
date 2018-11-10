@@ -11,11 +11,11 @@ import java.util.List;
  * @Time 2018-11-06 20:54
  * @Description
  */
-public class BusinessActivityAdapter extends FragmentPagerAdapter {
+public class BusinessActivityVPAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> fragmentList;
 
-    public BusinessActivityAdapter(FragmentManager fm, List<Fragment> fragmentList) {
+    public BusinessActivityVPAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;
     }

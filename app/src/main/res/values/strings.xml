@@ -8,4 +8,5 @@
     <string name="temperature">20°C</string>
     <string name="search_seller">输入商家、商品名称</string>
     <string name="title_recommend_seller">推荐商家</string>
+    <string name="itme_type">种类</string>
 </resources>

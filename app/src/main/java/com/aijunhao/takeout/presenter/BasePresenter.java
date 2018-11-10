@@ -46,7 +46,7 @@ public abstract class BasePresenter {
 
         @Override
         public void onFailure(Call<ResponseInfo> call, Throwable t) {
-                System.out.println("加载数据失败"+ t.getMessage());
+            System.out.println("加载数据失败"+ t.getMessage());
         }
     }
 

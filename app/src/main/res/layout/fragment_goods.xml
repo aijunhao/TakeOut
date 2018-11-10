@@ -6,10 +6,9 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_goods_type"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorAccent"/>
+        android:layout_weight="1"/>
 
     <se.emilsjolander.stickylistheaders.StickyListHeadersListView
         android:id="@+id/slhlv_goods"

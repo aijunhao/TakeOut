@@ -50,10 +50,10 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         mContext = context;
     }
 
-    public HomeRecyclerViewAdapter(List<Seller> nearBySellers, List<Seller> otherSellers) {
-        this.nearBySellers = nearBySellers;
-        this.otherSellers = otherSellers;
-    }
+//    public HomeRecyclerViewAdapter(List<Seller> nearBySellers, List<Seller> otherSellers) {
+//        this.nearBySellers = nearBySellers;
+//        this.otherSellers = otherSellers;
+//    }
 
     public void setNearBySellers(List<Seller> nearbySellers) {
         this.nearBySellers = nearbySellers;
@@ -176,7 +176,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             count += 1;
             count += otherSellers.size() + otherSellers.size() / otherSellerNumbersInGroup;
         }
-        Log.d(this.getClass().getName(), "getItemCount(): count = " + count);
+//        Log.d(this.getClass().getName(), "getItemCount(): count = " + count);
         return count;
     }
 
