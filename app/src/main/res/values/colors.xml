@@ -3,4 +3,21 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="takeout_white">#FFFFFF</color>
+
+    <color name="takeout_tv_bg_red">#FF0000</color>
+    <color name="takeout_tv_bg_gold">#FFD700</color>
+    <color name="takeout_tv_border_gray">#BFBFBF</color>
+    <color name="takeout_list_bg_light_gray">#EFEFEF</color>
+    <color name="takeout_tv_search_bg_gray">#F0F0F0</color>
+    <color name="takeout_ll_bg_red">#f6f89191</color>
+    <color name="takeout_blue">#0000FF</color>
+    <color name="takeout_black">#000000</color>
+    <color name="takeout_ll_bg_dark_gray">#AA000000</color>
+    <color name="takeout_tv_submit_bg_green">#22C222</color>
+    <color name="takeout_bottom_bar_active">#1296DB</color>
+    <color name="takeout_bottom_bar_inActive">#BFBFBF</color>
+    <color name="takeout_recycle_item_ll_bg_gray">#B9DEDCDC</color>
+    <color name="takeout_view_bg_gray">#E6E6E6</color>
 </resources>

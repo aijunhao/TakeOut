@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.aijunhao.takeout.R;
 import com.aijunhao.takeout.model.net.bean.Seller;
 import com.aijunhao.takeout.ui.adapter.BusinessActivityVPAdapter;
@@ -69,7 +68,7 @@ public class BusinessActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_business);
+        setContentView(R.layout.takeout_activity_business);
         ButterKnife.bind(this);
 
         seller = (Seller) getIntent().getSerializableExtra("seller");

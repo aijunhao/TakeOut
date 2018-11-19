@@ -2,21 +2,21 @@
 <tabs>
     <tab
         id="@+id/tab_home"
-        icon="@drawable/ic_tab_home1"
+        icon="@drawable/takeout_tabs_icon_home"
         title="@string/tab_home"/>
 
     <tab
         id="@+id/tab_more"
-        icon="@drawable/ic_tab_outtake1"
+        icon="@drawable/takeout_tabs_icon_more"
         title="@string/tab_more"/>
 
     <tab
         id="@+id/tab_order"
-        icon="@drawable/ic_tab_order1"
+        icon="@drawable/takeout_tabs_icon_order"
         title="@string/tab_order"/>
 
     <tab
         id="@+id/tab_mine"
-        icon="@drawable/ic_tab_mine1"
+        icon="@drawable/takeout_tabs_icon_mine"
         title="@string/tab_mine"/>
 </tabs>

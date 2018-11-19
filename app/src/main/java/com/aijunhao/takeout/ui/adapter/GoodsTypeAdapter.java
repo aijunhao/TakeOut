@@ -40,7 +40,7 @@ public class GoodsTypeAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_type, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.takeout_recyce_item_type, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }

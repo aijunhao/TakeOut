@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import com.aijunhao.takeout.R;
 import com.aijunhao.takeout.dagger.component.fragment.DaggerHomeFragmentComponent;
 import com.aijunhao.takeout.dagger.module.fragment.HomeFragmentModule;
-import com.aijunhao.takeout.model.net.bean.Seller;
 import com.aijunhao.takeout.presenter.fragment.HomeFragmentPresenter;
 import com.aijunhao.takeout.ui.adapter.HomeRecyclerViewAdapter;
 
@@ -84,7 +82,7 @@ public class HomeFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, null);
+        View view = inflater.inflate(R.layout.takeout_fragment_home, null);
         unbinder = ButterKnife.bind(this, view);
         return view;
     }

@@ -7,50 +7,50 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/home_division_table_background">
+        android:padding="@dimen/dp_5"
+        android:layout_margin="@dimen/dp_5"
+        android:background="@drawable/takeout_home_division_table_background">
 
         <TextView
             android:id="@+id/tv_division_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="------------------大家都在找------------------"/>
+            android:text="@string/takeout_tv_table_title"/>
 
         <TableLayout
             android:layout_below="@id/tv_division_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin">
 
             <TableRow>
                 <TextView
                     style="@style/division_tablerow_style"
-                    android:text="肯德基">
+                    android:text="@string/takeout_tv_table_row">
                 </TextView>
                 <TextView
                     style="@style/division_tablerow_style"
-                    android:text="肯德基">
+                    android:text="@string/takeout_tv_table_row">
                 </TextView>
                 <TextView
                     style="@style/division_tablerow_style"
-                    android:text="肯德基">
+                    android:text="@string/takeout_tv_table_row">
                 </TextView>
             </TableRow>
             <TableRow>
                 <TextView
                     style="@style/division_tablerow_style"
-                    android:text="肯德基">
+                    android:text="@string/takeout_tv_table_row">
                 </TextView>
                 <TextView
                     style="@style/division_tablerow_style"
-                    android:text="肯德基">
+                    android:text="@string/takeout_tv_table_row">
                 </TextView>
                 <TextView
                     style="@style/division_tablerow_style"
-                    android:text="肯德基">
+                    android:text="@string/takeout_tv_table_row">
                 </TextView>
             </TableRow>
         </TableLayout>

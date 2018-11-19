@@ -11,13 +11,9 @@ import android.view.ViewGroup;
 import com.aijunhao.takeout.R;
 import com.aijunhao.takeout.dagger.component.fragment.DaggerGoodsFragmentComponent;
 import com.aijunhao.takeout.dagger.module.fragment.GoodsFragmentModule;
-import com.aijunhao.takeout.model.net.bean.GoodsTypeInfo;
 import com.aijunhao.takeout.model.net.bean.Seller;
 import com.aijunhao.takeout.presenter.fragment.GoodsFragmentPresenter;
 import com.aijunhao.takeout.ui.adapter.GoodsTypeAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -54,7 +50,7 @@ public class GoodsFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_goods, null);
+        View view = inflater.inflate(R.layout.takeout_fragment_goods, null);
         unbinder = ButterKnife.bind(this, view);
 
         // 设置布局管理器

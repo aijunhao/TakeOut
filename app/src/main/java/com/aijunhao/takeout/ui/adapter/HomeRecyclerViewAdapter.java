@@ -3,7 +3,6 @@ package com.aijunhao.takeout.ui.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -74,15 +73,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         switch (viewType) {
             case TYPE_TITLE:
-                View titleView = View.inflate(parent.getContext(), R.layout.item_home_title, null);
+                View titleView = View.inflate(parent.getContext(), R.layout.takeout_recyle_item_home_title, null);
                 TitleHolder titleHolder = new TitleHolder(titleView);
                 return titleHolder;
             case TYPE_DIVISION:
-                View divisionView = View.inflate(parent.getContext(), R.layout.item_home_division, null);
+                View divisionView = View.inflate(parent.getContext(), R.layout.takeout_recycle_item_home_division, null);
                 DivisionHolder divisionHolder = new DivisionHolder(divisionView);
                 return divisionHolder;
             case TYPE_SELLER:
-                View sellerView = View.inflate(parent.getContext(), R.layout.item_home_seller, null);
+                View sellerView = View.inflate(parent.getContext(), R.layout.takeout_recycle_item_home_seller, null);
                 SellerHolder sellerHolder = new SellerHolder(sellerView);
                 return sellerHolder;
         }

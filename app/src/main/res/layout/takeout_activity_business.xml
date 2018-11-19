@@ -12,7 +12,7 @@
 
         <com.flipboard.bottomsheet.BottomSheetLayout
             android:id="@+id/bottomSheetLayout"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dp_0"
             android:layout_weight="1"
             android:layout_width="match_parent">
 
@@ -23,41 +23,41 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:background="#f6f89191"
+                    android:background="@color/takeout_ll_bg_red"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="25dp">
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_25">
 
                     <ImageButton
-                        android:background="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+                        android:background="@drawable/takeout_back_icon"
                         android:id="@+id/ib_back"
                         android:layout_gravity="center_vertical"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="@dimen/dp_10"
                         android:layout_width="wrap_content" />
 
                     <TextView
                         android:id="@+id/tv_title"
                         android:layout_gravity="center_vertical"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/dp_0"
                         android:singleLine="true"
                         android:text="田老师红烧肉(东北旺西路店)"
-                        android:textColor="#fff"
-                        android:textSize="20sp"
+                        android:textColor="@color/takeout_white"
+                        android:textSize="@dimen/sp_20"
                         android:textStyle="bold" />
 
                     <ImageButton
-                        android:background="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+                        android:background="@drawable/takeout_moreoverflow_icon"
                         android:id="@+id/ib_menu"
                         android:layout_gravity="center_vertical"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="@dimen/dp_10"
                         android:layout_width="wrap_content" />
                 </LinearLayout>
 
@@ -70,98 +70,96 @@
                     android:id="@+id/tabs"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    app:tabIndicatorColor="#00f"
-                    app:tabIndicatorHeight="4dp"
-                    app:tabSelectedTextColor="#00f"
-                    app:tabTextColor="#000"></android.support.design.widget.TabLayout>
+                    app:tabIndicatorColor="@color/takeout_blue"
+                    app:tabIndicatorHeight="@dimen/dp_4"
+                    app:tabSelectedTextColor="@color/takeout_blue"
+                    app:tabTextColor="@color/takeout_black"/>
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/vp"
-                    android:layout_height="0dp"
+                    android:layout_height="@dimen/dp_0"
                     android:layout_weight="1"
-                    android:layout_width="match_parent"></android.support.v4.view.ViewPager>
+                    android:layout_width="match_parent"/>
             </LinearLayout>
 
         </com.flipboard.bottomsheet.BottomSheetLayout>
 
         <LinearLayout
-            android:background="#aa000000"
+            android:id="@+id/bottom"
+            android:background="@color/takeout_ll_bg_dark_gray"
             android:clickable="true"
             android:gravity="center_vertical"
-            android:id="@+id/bottom"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/dp_50"
             android:layout_width="match_parent"
-            android:onClick="onClick"
             android:orientation="horizontal">
 
             <RelativeLayout
                 android:layout_height="match_parent"
-                android:layout_width="50dp">
+                android:layout_width="@dimen/dp_50">
 
                 <ImageView
                     android:id="@+id/imgCart"
                     android:layout_centerInParent="true"
-                    android:layout_height="32dp"
-                    android:layout_width="32dp"
-                    android:src="@drawable/icon_cart" />
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_width="@dimen/dp_30"
+                    android:src="@drawable/takeout_cart_icon_empty" />
 
                 <TextView
-                    android:background="@drawable/circle_red"
-                    android:gravity="center"
                     android:id="@+id/tvSelectNum"
+                    android:background="@drawable/takeout_background_solid_red_circle"
+                    android:gravity="center"
                     android:layout_alignParentRight="true"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:text="1"
-                    android:textColor="#fff"
-                    android:textSize="12sp"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textColor="@color/takeout_white"
+                    android:textSize="@dimen/sp_12"
                     android:visibility="gone" />
             </RelativeLayout>
 
             <TextView
-                android:gravity="center_vertical"
                 android:id="@+id/tvCountPrice"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:gravity="center_vertical"
                 android:text="￥0"
-                android:textColor="#fff"
-                android:textSize="14sp" />
+                android:textColor="@color/takeout_white"
+                android:textSize="@dimen/sp_14" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/tvDeliveryFee"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:layout_width="0dp"
-                android:text="另需配送费￥4"
-                android:textColor="#fff"
-                android:textSize="14sp" />
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@string/takeout_tv_deliveryFee"
+                android:textColor="@color/takeout_white"
+                android:textSize="@dimen/sp_14" />
 
             <TextView
                 android:gravity="center"
                 android:id="@+id/tvSendPrice"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/dp_10"
                 android:layout_width="wrap_content"
-                android:text="￥100元起送"
-                android:textColor="#fff"
-                android:textSize="14sp" />
+                android:text="@string/takeout_tv_sendPrice"
+                android:textColor="@color/takeout_white"
+                android:textSize="@dimen/sp_14" />
 
             <TextView
-                android:background="#22c222"
+                android:id="@+id/tvSubmit"
+                android:background="@color/takeout_tv_submit_bg_green"
                 android:clickable="true"
                 android:gravity="center"
-                android:id="@+id/tvSubmit"
                 android:layout_height="match_parent"
-                android:layout_width="90dp"
-                android:onClick="onClick"
-                android:text="去结算"
-                android:textColor="#fff"
-                android:textSize="18sp"
+                android:layout_width="@dimen/dp_90"
+                android:text="@string/takeout_tv_submit"
+                android:textColor="@color/takeout_white"
+                android:textSize="@dimen/sp_18"
                 android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
